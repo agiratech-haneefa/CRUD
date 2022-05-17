@@ -28,9 +28,9 @@ Layers Architecture : https://ctrly.blog/nodejs-layered-architecture/
 - npm install nodemailer
 - required:
   => Gmail Id and Password
-  => Google -> Settings -> Security -> Enable Less secure app access# Upload Files
+  => Google -> Settings -> Security -> Enable Less secure app access
   
-# Files Upload & Middleware
+# Upload Files & Middleware
 - npm install multer
 - multer is a middlware.
   search middlwares in terminal : npm search middleware
