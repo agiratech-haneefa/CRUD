@@ -1,0 +1,35 @@
+const express = require("express");
+const { upload } = require("../services/fileUpload");
+const router = express.Router();
+
+router.get("/login", isLoggin, (req, res) => {
+  console.log("After middleware");
+  console.log(req.user);
+  res.send("Welcome User");
+});
+
+function isLoggin(req, res, next) {
+  console.log("In middleware");
+
+  if (req.query.isLogin === "true") {
+    console.log("Login user");
+    next();
+  } else {
+    res.send("Access Denied");
+  }
+}
+
+// Single File Route Handler
+router.post("/single", upload.single("SingleFile"), (req, res) => {
+  console.log(req.file);
+
+  res.send("Single File upload success");
+});
+
+// Multiple Files Route Handler
+router.post("/multi", upload.array("MultiFiles", 3), (req, res) => {
+  console.log(req.files);
+  res.send("Multiple Files Upload Success");
+});
+
+module.exports = router;
