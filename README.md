@@ -1,9 +1,9 @@
 # CRUD
- server.js
- Routes - API's 
- Services - Core functions or Logics
- Models - Db query
- Schema - Schema design
+     => server.js
+     => Routes - API's 
+     => Services - Core functions or Logics
+     => Models - Db query
+     => Schema - Schema design
 
 1.Create Project Name folder and open in VS code
 2.npm init -> it will generate package.json
